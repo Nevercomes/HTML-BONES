@@ -1,0 +1,13 @@
+# the target directory
+target/
+
+# the .idea directory
+.idea/artifacts/
+.idea/libraries
+.idea/workspace.xml
+.idea/dataSources/
+.idea/inspectionProfiles/
+.idea/dataSources.local.xml
+
+# HTMLBONES.iml
+HTMLBONES.iml
