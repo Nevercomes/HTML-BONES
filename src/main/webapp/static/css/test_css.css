@@ -1,0 +1,59 @@
+@charset "utf-8";
+body{text-align:center;}
+.button_1{font-family:黑体;font-size:16px;font-weight:bold;width:90px;height:30px;background:white;
+	 display :  inline - block ;  
+     position :  relative ;  
+     margin :  10px ;  
+     padding : 0  20px ;  
+     text-align :  center ;  
+     text-decoration :  none ;   
+     text-shadow :  1px   1px   1px  rgba(255,255,255, .22);  
+  
+     webkit-border -radius:  30px ;  
+     moz-border-radius:  30px ;  
+     border-radius:  30px ;  
+  
+     webkit-box-shadow:  1px   1px   1px  rgba(0,0,0, .29),  inset   1px   1px   1px  rgba(255,255,255, .44);  
+     moz-box-shadow:  1px   1px   1px  rgba(0,0,0, .29),  inset   1px   1px   1px  rgba(255,255,255, .44);  
+     box-shadow:  1px   1px   1px  rgba(0,0,0, .29),  inset   1px   1px   1px  rgba(255,255,255, .44);  
+  
+     webkit-transition:  all  0.15s ease;  
+     moz-transition:  all  0.15s ease;  
+     o-transition:  all  0.15s ease;  
+     ms-transition:  all  0.15s ease;  
+     transition:  all  0.15s ease; 			
+			}
+.button_2{
+     font-family:黑体;font-size:16px;font-weight:bold;width:180px;height:50px;background:white;
+	 display :  inline - block ;  
+     position :  relative ;  
+     margin :  10px ;  
+     padding : 0  20px ;  
+     text-align :  center ;  
+     text-decoration :  none ;   
+     text-shadow :  1px   1px   1px  rgba(255,255,255, .22);  
+  
+     webkit-border -radius:  30px ;  
+     moz-border-radius:  30px ;  
+     border-radius:  30px ;  
+  
+     webkit-box-shadow:  1px   1px   1px  rgba(0,0,0, .29),  inset   1px   1px   1px  rgba(255,255,255, .44);  
+     moz-box-shadow:  1px   1px   1px  rgba(0,0,0, .29),  inset   1px   1px   1px  rgba(255,255,255, .44);  
+     box-shadow:  1px   1px   1px  rgba(0,0,0, .29),  inset   1px   1px   1px  rgba(255,255,255, .44);  
+  
+     webkit-transition:  all  0.15s ease;  
+     moz-transition:  all  0.15s ease;  
+     o-transition:  all  0.15s ease;  
+     ms-transition:  all  0.15s ease;  
+     transition:  all  0.15s ease;
+       
+}
+
+.tabTitlesContainer{text-align:center;cursor:auto;width:100%;font-size:24px;font-family:黑体;font-weight:bold;}
+.tabTitleUnSelected{background-color:white;width:50%;}
+.tabTitleUnSelected:hover{background-color:silver;}
+.tabTitleSelected{background-color:white;width:50%;border:#F00 solid;}
+#tabPagesContainer{text-align:left;font-size:small;font-size:small;width:100%;}
+.tabPageUnSelected{background-color:white;display: none;}
+.tabPageSelected{background-color: white;display:block;}
+.tabPage{height:500px;}/* CSS Document */
