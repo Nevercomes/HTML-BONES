@@ -1,7 +1,6 @@
 # HTML-BONES
-> A website that supports converting web page design drafts and hand-drawn sketches into HTML code
-
-Simple，convenient，efficient，your html code generation assistant —— P2C
+A website that supports converting web page design drafts and hand-drawn sketches into HTML code
+> Simple，convenient，efficient，your html code generation assistant —— P2C
 
 #### Main Web Tech
 
