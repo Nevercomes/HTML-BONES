@@ -1,6 +1,8 @@
 # HTML-BONES
+see http://www.nevercome.net/html-bones  
+
 A website that supports converting web page design drafts and hand-drawn sketches into HTML code
-> Simple，convenient，efficient，your html code generation assistant —— P2C
+> Simple，convenient，efficient，your html code generation assistant —— P2C  
 
 #### Main Web Tech
 
