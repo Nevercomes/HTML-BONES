@@ -4,83 +4,68 @@
 <html lang="zh-CN">
 <head>
     <title>HTML-BONES</title>
-    <%@include file="/WEB-INF/views/include/head.jsp"%>
-    <script src="${ctxStatic}js/test_js.js" type="text/javascript"></script>
-    <link href="${ctxStatic}css/test_css.css" rel="stylesheet" type="text/css"/>
+    <%@include file="/WEB-INF/views/include/head.jsp" %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="${ctxStatic}css/customize.css" rel="stylesheet" type="text/css"/>
+
+    <script src="${ctxStatic}js/alert.js" type="text/javascript"></script>
+
 </head>
 
 <body>
 <header class="navbar navbar-expand navbar-light bg-light flex-column flex-md-row bd-navbar">
-    <a class="navbar-brand mr-0 mr-md-2" href="#">
-        <img id="test" src="${ctxStatic}image/logo.png" width="150" height="40">
+    <a class="navbar-brand" href="#">
+        <img src="${ctxStatic}image/logo.png" width="150" height="40">
     </a>
-    <div class="navbar-nav-scroll">
-        <ul class="navbar-nav bd-navbar-nav flex-row">
-        </ul>
-    </div>
-    <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
-        <li class="nav-item active">
-            <label type="label"><img src="${ctxStatic}image/3.jpg" style="width:30px; height:30px; margin-bottom:-10px"/></label>
+    <ul class="navbar-nav bd-navbar-nav flex-row">
+    </ul>
+    <ul class="navbar-nav flex-row ml-md-auto d-md-flex">
+        <li class="nav-item">
+            <a class="btn btn-outline-success" href="#" onclick="alertNotOpenShow()">登录 <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-            <button type="button" class="button_1">登录</button>
+            <span>&nbsp&nbsp&nbsp&nbsp</span>
         </li>
         <li class="nav-item">
-            <button type="button" class="button_1">注册</button>
+            <a class="btn btn-outline-secondary" href="#" onclick="alertNotOpenShow()">联系我们 <span class="sr-only">(current)</span></a>
         </li>
     </ul>
 </header>
-<table class="tabTitlesContainer" style="padding-top:0%; width:100%; height:80px" rules="none" frame="below" border="1">
-    <tr id="tabTitles">
-        <td class="tabTitleSelected" onclick="tabPageControl(0)" style="width:50%">设计稿</td>
-        <td class="tabTitleUnSelected" onclick="tabPageControl(1)" style="width:50%">草图</td>
-    </tr>
-</table>
-<table id="tabPagesContainer" style="width:100%;" rules="none" frame="below" border="5">
-    <tbody class="tabPageSelected">
-    <tr class="tabPage">
-        <td style="height:450px; weight:100%">
-            <div style="width:20%; height:100%; float:left">
-                <button type="button" class="button_2" style="margin-left:15px; margin-top:40px">上传设计图</button>
-                <button type="button" class="button_2" style="margin-left:15px; margin-top:5px">重新上传</button>
-            </div>
-            <div style="width:30%; height:100%;float:left">
-                <img src="${ctxStatic}image/2.png"
-                     style="margin-left:-60px; margin-top:30px; border-color:#03F; width:516px; height:408px"/>
-            </div>
-            <div style="width:20%; height:100%; float:left">
-                <button type="button" class="button_2" style="margin-left:15px; margin-top:40px">开始生成</button>
-                <button type="button" class="button_2" style="margin-left:15px; margin-top:5px">自动保存</button>
-            </div>
-            <div style="width:30%; height:100%;float:left">
-                <img src="${ctxStatic}image/1.png"
-                     style="margin-left:-60px; margin-top:30px; border-color:#03F; width:516px; height:408px" />
-            </div>
-        </td>
-    </tr>
-    </tbody>
-    <tbody class="tabPageUnSelected">
-    <tr class="tabPage">
-        <td style="height:450px; weight:100%">
-            <div style="width:20%; height:100%; float:left">
-                <button type="button" class="button_2" style="margin-left:15px; margin-top:40px">上传草图</button>
-                <button type="button" class="button_2" style="margin-left:15px; margin-top:5px">重新上传</button>
-            </div>
-            <div style="width:30%; height:100%;float:left">
-                <img src="${ctxStatic}image/2.png"
-                     style="margin-left:-60px; margin-top:30px; border-color:#03F; width:516px; height:408px"/>
-            </div>
-            <div style="width:20%; height:100%; float:left">
-                <button type="button" class="button_2" style="margin-left:15px; margin-top:40px">开始生成</button>
-                <button type="button" class="button_2" style="margin-left:15px; margin-top:5px;">自动保存</button>
-            </div>
-            <div style="width:30%; height:100%;float:left">
-                <img src="${ctxStatic}image/1.png"
-                     style="margin-left:-60px; margin-top:30px; border-color:#03F; width:516px; height:408px" />
-            </div>
-        </td>
-    </tr>
-    </tbody>
-</table>
+<div class="container text-center">
+    <img class="bd-title" src="${ctxStatic}image/title4.jpg">
+    <div class="row">
+        <div class="col-6">
+            <!-- <div class="row text-center"> -->
+            <img class="center-block bd-main-box" src="${ctxStatic}image/design.png" width="400" height="400">
+            <!-- </div> -->
+        </div>
+        <div class="col-6">
+            <!-- <div class="row text-center"> -->
+            <img class="center-block bd-main-box" src="${ctxStatic}image/sketch.png" width="400" height="400">
+            <!-- </div> -->
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-6">
+            <!-- <div class="row text-center"> -->
+            <!-- <img class="center-block bd-main-box" src="static/image/design.png" width="400" height="400"> -->
+            <!-- </div> -->
+            <button class="btn btn-outline-primary" onclick="alertNotOpenShow()">上传设计图</button>
+        </div>
+        <div class="col-6">
+            <!-- <div class="row text-center"> -->
+            <!-- <img class="center-block bd-main-box" src="static/image/sketch.png" width="400" height="400"> -->
+            <!-- </div> -->
+            <button class="btn btn-outline-primary" onclick="alertNotOpenShow()">上传手绘图</button>
+        </div>
+    </div>
+
+    <div id="alert-not-open" class="alert alert-warning fade show bd-alert" role="alert">
+        <strong>Sorry,website is under development</strong>
+    </div>
+</div>
 </body>
 </html>
+
