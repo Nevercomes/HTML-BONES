@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="HTML-BONES_Servlet:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/HTML_BONES_Servlet_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="HTML-BONES_Servlet/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="HTML-BONES_Servlet" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
