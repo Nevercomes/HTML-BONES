@@ -13,7 +13,7 @@
   <body>
   <div id="page1">
       <header>
-        <h1>HTML-BONES</h1>
+	      <a class="home" href="index.jsp"><h1>HTML-BONES</h1></a>
         <a href="register.html" class="btn btn-primary">注册</a>
         <a href="login.html" class="btn btn-primary">登录</a>
       </header>
