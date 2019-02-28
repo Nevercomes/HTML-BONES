@@ -11,11 +11,11 @@ import java.util.List;
  */
 public final class PythonUtils {
     /***
-     * 传入参数调用shell脚本
+     * 传入参数调用python脚本
      * 返回结果为字符串（文件路径 结果等）
-     * @param path shell path
+     * @param path py path
      * @param args parameters
-     * @return result path
+     * @return path or result
      */
     public static String callArgs(String path, List<String> args) {
         String result = "";
