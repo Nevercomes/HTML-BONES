@@ -327,6 +327,11 @@
             <artifactId>guava</artifactId>
             <version>${guava.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.activiti</groupId>
+            <artifactId>activiti-engine</artifactId>
+            <version>5.18.0</version>
+        </dependency>
         <!-- Other end -->
 
     </dependencies>
