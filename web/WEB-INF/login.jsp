@@ -74,7 +74,7 @@
     <h2 id="login_title">登录 HTML-BONES</h2>
     <div id="login_page" class="container">
 		<div class="row">
-        <h1 id="login_page_title" class="col-lg-6 col-xs-6">HTML-BONES</h1>
+        <a class="home" href="index.html"> <h1 id="login_page_title" class="col-lg-6 col-xs-6">HTML-BONES</h1></a>
         <div class="login_form col-lg-6 col-xs-6">
             <div class="warning"></div>
             <form role="form" id="loginForm">

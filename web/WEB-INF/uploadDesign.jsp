@@ -1,5 +1,4 @@
-﻿<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -7,7 +6,7 @@
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="HTML-BONES.css">
+	<link rel="stylesheet" href="HTML-BONES.css">
 	<script>
 		$(document).ready(function(){
 
@@ -46,41 +45,11 @@
 			$("#code").hide();
 			$(".bar").hide();
 			$("#btn_submit").on("click",function(){
-				console.log("You clicked",this);
-				$("#imgContent").animate({
-					marginLeft:'-=320'
-				},1000);
-				
-				$("#code").show();
-				$("#code").animate({
-					top:'-=130',
-					opacity:1,
-				},2000);
 
-				$(".bar").show();
-				$(".bar").animate({
-					top:'-=30',
-					opacity:1,
-				},2000);
-				
-				$("#picture_in").hide();
-				$(this).hide();
-				
 			});
 			$("#picture_in").on("change",function(){
-
-			    var fileTypes = [".jpg",".png"];
 			    var filePath = this.value;
 			    if(filePath) {
-                    // var isNext = false;
-                    // var fileEnd = filePath.substring(filePath.indexof("."));
-                    // for (var i = 0; i < fileTypes.length; i++) {
-                    //     if (fileTypes[i] == fileEnd) {
-                    //         isNext = true;
-                    //         break;
-                    //     }
-                    // }
-                    // if (isNext) {
                         //获取文件
                         var file = $("#imgForm").find("input")[0].files[0];
 
@@ -92,7 +61,6 @@
 
                         //为文件读取成功设置事件
                         reader.onload = function (e) {
-                            // alert('文件读取完成');
                             imgFile = e.target.result;
                             console.log(imgFile);
                             $("#imgContent").attr('src', imgFile);
@@ -101,16 +69,68 @@
                         //正式读取文件
                         reader.readAsDataURL(file);
                     }
-                    // else{
-                    //         alert('请选择图片，类型为jpg或png');
-                    //         file.value = '';
-					// }
                 else{
-                    // alert('请选择图片，类型为jpg或png');
                     this.value = '';
                     $("#imgContent").removeAttr('src');
                 }
 			});
+
+			$("#imgForm").on("submit",function (e) {
+			    e.preventDefault();
+                var fileTypes = ["jpg","png"];
+                var filePath = $("#picture_in").val();
+                if(filePath) {
+                    var isNext = false;
+                    var arr=filePath.split('\\');
+                    var fileName=arr[arr.length-1];
+                    var ar = fileName.split('.');
+                    var fileEnd = ar[ar.length-1];
+                    console.log(ar);
+                    console.log(fileName);
+                    // console.log(filePath);
+                    console.log(fileEnd);
+                    for (var i = 0; i < fileTypes.length; i++) {
+                        if (fileTypes[i] == fileEnd) {
+                            isNext = true;
+                            break;
+                        }
+                    }
+                    if (isNext) {
+                        //显示动态
+                        console.log("You clicked",this);
+                        $("#imgContent").animate({
+                            marginLeft:'-=320'
+                        },1000);
+
+                        $("#code").show();
+                        $("#code").animate({
+                            top:'-=130',
+                            opacity:1,
+                        },2000);
+
+                        $(".bar").show();
+                        $(".bar").animate({
+                            top:'-=30',
+                            opacity:1,
+                        },2000);
+
+                        $("#picture_in").hide();
+                        $(this).hide();
+
+                        var details = $("#imgForm").serialize();
+                        $.post('#',details);
+                    }
+                    else{
+                            alert('请选择图片，类型为jpg或png');
+                        $("#picture_in").val("");
+                        $("#imgContent").removeAttr('src');
+                    }
+                }
+                else{
+                    alert('请选择图片');
+                    $("#picture_in").val("");
+				}
+            });
 
 			$('#comment').on('click',function () {
 
@@ -149,11 +169,11 @@
 		<div id="code">
 			
 		</div>
-<form id="imgForm">
+	<form id="imgForm">
 		<input type="file" name="picture" id="picture_in">
-</form>
 		<button id="btn_submit"  class="btn btn-default">上传图片</button>
-		<h4 class="changeUpload">上传草图？<a href="uploadDraft.html">点击这里</a></h4>
+	</form>
+		<h4 class="changeUpload">上传草图？<a href="uploadDesign.html">点击这里</a></h4>
 		
 		<div class="progress progress-striped active bar">
     			<div class="progress-bar progress-bar-success" role="progressbar"

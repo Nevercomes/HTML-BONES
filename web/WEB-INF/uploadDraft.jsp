@@ -1,5 +1,4 @@
-﻿<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -8,87 +7,6 @@
     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="HTML-BONES.css">
-	<!--<style>-->
-<!--/*-->
-	<!--body {-->
-    	<!--overflow:scroll;-->
-    	<!--overflow-y:hidden;-->
-    <!--}-->
-<!--*/-->
-	  <!--header{-->
-		<!--margin: 0;-->
-		<!--top:-3px;-->
-        <!--position:fixed;-->
-        <!--width:100%;-->
-        <!--background-color:#eeeeee;-->
-        <!--padding:10px 30px 10px 30px;-->
-        <!--display: block;-->
-        <!--margin: 0 auto;-->
-        <!--z-index: 5;-->
-      <!--}-->
-      <!--header h1{-->
-        <!--display: inline;-->
-      <!--}-->
-      <!--header a{-->
-        <!--float: right;-->
-        <!--margin: 3px 5px 0px 5px;-->
-      <!--}-->
-		<!--#page2{-->
-			<!--margin: 90px auto;-->
-			<!--width: 1100px;-->
-			<!--height: 400px;	-->
-		<!--}-->
-		<!--#imgContent{-->
-			<!--width:400px;-->
-			<!--height: 400px;-->
-			<!--margin: 10px 0px 10px 280px;-->
-		<!--}-->
-		<!--.page_title{-->
-			<!--width: 300px;-->
-			<!--margin: 20px auto 30px;-->
-		<!--}-->
-		<!--#picture_in{-->
-			<!--margin: 15px 280px;-->
-		<!--}-->
-		<!--#btn_submit{-->
-			<!--width:250px;-->
-			<!--margin: 5px 350px;-->
-		<!--}-->
-		<!--#code{-->
-			<!--width: 300px;-->
-			<!--height: 400px;-->
-			<!--padding: 200px 200px;-->
-			<!--display: inline;-->
-			<!--border: 1px solid #C0C0C0;-->
-			<!--margin: 100px 0px;-->
-			<!--position: absolute;-->
-			<!--left: 900px;-->
-			<!--top: 200px;-->
-			<!--opacity: 0;-->
-
-		<!--}-->
-		<!--.bar{-->
-			<!--opacity: 0;-->
-			<!--width: 1000px;-->
-			<!--height: 20px;-->
-			<!--position: absolute;-->
-			<!--left: 200px;-->
-			<!--top:650px;-->
-		<!--}-->
-		<!--.changeUpload{-->
-			<!--width: 180px;-->
-			<!--margin: 0 auto;-->
-		<!--}-->
-
-		<!--#commentBox{-->
-			<!--position: absolute;-->
-			<!--z-index: 15;-->
-			<!--background: white;-->
-			<!--width:300px;-->
-			<!--height:250px;-->
-			<!--margin: auto;-->
-		<!--}-->
-	<!--</style>-->
 	<script>
 		$(document).ready(function(){
 
@@ -127,41 +45,11 @@
 			$("#code").hide();
 			$(".bar").hide();
 			$("#btn_submit").on("click",function(){
-				console.log("You clicked",this);
-				$("#imgContent").animate({
-					marginLeft:'-=320'
-				},1000);
-				
-				$("#code").show();
-				$("#code").animate({
-					top:'-=130',
-					opacity:1,
-				},2000);
 
-				$(".bar").show();
-				$(".bar").animate({
-					top:'-=30',
-					opacity:1,
-				},2000);
-				
-				$("#picture_in").hide();
-				$(this).hide();
-				
 			});
 			$("#picture_in").on("change",function(){
-
-			    var fileTypes = [".jpg",".png"];
 			    var filePath = this.value;
 			    if(filePath) {
-                    // var isNext = false;
-                    // var fileEnd = filePath.substring(filePath.indexof("."));
-                    // for (var i = 0; i < fileTypes.length; i++) {
-                    //     if (fileTypes[i] == fileEnd) {
-                    //         isNext = true;
-                    //         break;
-                    //     }
-                    // }
-                    // if (isNext) {
                         //获取文件
                         var file = $("#imgForm").find("input")[0].files[0];
 
@@ -173,7 +61,6 @@
 
                         //为文件读取成功设置事件
                         reader.onload = function (e) {
-                            // alert('文件读取完成');
                             imgFile = e.target.result;
                             console.log(imgFile);
                             $("#imgContent").attr('src', imgFile);
@@ -182,16 +69,68 @@
                         //正式读取文件
                         reader.readAsDataURL(file);
                     }
-                    // else{
-                    //         alert('请选择图片，类型为jpg或png');
-                    //         file.value = '';
-					// }
                 else{
-                    // alert('请选择图片，类型为jpg或png');
                     this.value = '';
                     $("#imgContent").removeAttr('src');
                 }
 			});
+
+			$("#imgForm").on("submit",function (e) {
+			    e.preventDefault();
+                var fileTypes = ["jpg","png"];
+                var filePath = $("#picture_in").val();
+                if(filePath) {
+                    var isNext = false;
+                    var arr=filePath.split('\\');
+                    var fileName=arr[arr.length-1];
+                    var ar = fileName.split('.');
+                    var fileEnd = ar[ar.length-1];
+                    console.log(ar);
+                    console.log(fileName);
+                    // console.log(filePath);
+                    console.log(fileEnd);
+                    for (var i = 0; i < fileTypes.length; i++) {
+                        if (fileTypes[i] == fileEnd) {
+                            isNext = true;
+                            break;
+                        }
+                    }
+                    if (isNext) {
+                        //显示动态
+                        console.log("You clicked",this);
+                        $("#imgContent").animate({
+                            marginLeft:'-=320'
+                        },1000);
+
+                        $("#code").show();
+                        $("#code").animate({
+                            top:'-=130',
+                            opacity:1,
+                        },2000);
+
+                        $(".bar").show();
+                        $(".bar").animate({
+                            top:'-=30',
+                            opacity:1,
+                        },2000);
+
+                        $("#picture_in").hide();
+                        $(this).hide();
+
+                        var details = $("#imgForm").serialize();
+                        $.post('#',details);
+                    }
+                    else{
+                            alert('请选择图片，类型为jpg或png');
+                        $("#picture_in").val("");
+                        $("#imgContent").removeAttr('src');
+                    }
+                }
+                else{
+                    alert('请选择图片');
+                    $("#picture_in").val("");
+				}
+            });
 
 			$('#comment').on('click',function () {
 
@@ -230,10 +169,10 @@
 		<div id="code">
 			
 		</div>
-<form id="imgForm">
+	<form id="imgForm">
 		<input type="file" name="picture" id="picture_in">
-</form>
 		<button id="btn_submit"  class="btn btn-default">上传图片</button>
+	</form>
 		<h4 class="changeUpload">上传设计图？<a href="uploadDesign.html">点击这里</a></h4>
 		
 		<div class="progress progress-striped active bar">

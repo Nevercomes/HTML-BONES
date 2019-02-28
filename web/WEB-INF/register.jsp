@@ -99,7 +99,7 @@
                 var details = $("#registerForm").serialize();
                 if(!isUsernameEmpty() && !isPasswordEmpty() && !isPasswordAgainEmpty() && isPasswordEquel()){
                     $.post('#', details, function(data){
-                        $('.warning').text("");
+                        $('.warning').text("data");//提示的方法还需要改
                    });
                 }
             });
@@ -110,7 +110,7 @@
     <h2 id="register_title">加入 HTML-BONES</h2>
     <div id="register_page" class="container">
 		<div class="row">
-        <h1 id="register_page_title" class="col-lg-6 col-xs-6"><a href="index.html">HTML-BONES</a></h1>
+        <a class="home" href="index.html"> <h1 id="register_page_title" class="col-lg-6 col-xs-6">HTML-BONES</h1></a>
         <div class="register_form col-lg-6 col-xs-6">
             <p class="warning"></p>
             <form role="form" id="registerForm">
