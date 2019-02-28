@@ -35,6 +35,7 @@ A website that supports converting web page design drafts and hand-drawn sketche
 		--com.p2c.html_bones /*root package*/
 			--common /*common code*/
 				--annotation /*spring customize annotation*/
+				--cache /*cache class files*/
 				--config /*global project config,load .properties files*/
 				--utils /*common utils*/
 				--web /*common utils about http and servlets*/
@@ -54,8 +55,18 @@ A website that supports converting web page design drafts and hand-drawn sketche
 				--sys
 					--interceptor /*interceptor for system*/
 					--listener /*customize webContextListener*/
+				--python /*python script call*/
+				--model /*model modules*/
 	--resources /*source config*/
 	--webapp /*web project root*/
+	    --model /*tensorflow.js model*/
+	        --pix2code /*screen-hot style model structure and weights*/
+	        --sketch2code /*drawn style model structure and weights*/
+	    --static
+	        ...
+	        --js
+	            --model /*tensorflow.js for model inference*/
+	        ...
 --test /*single test source code*/
 ```
 
