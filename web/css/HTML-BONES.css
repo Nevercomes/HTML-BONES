@@ -349,3 +349,12 @@ span{
     top:10px;
     left:170px;
 }
+
+.home{
+    color: #333333;
+}
+.home:hover{
+    color: #333333;
+    text-decoration: none;
+    float: none;
+}
